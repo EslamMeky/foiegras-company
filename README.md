@@ -1,4 +1,4 @@
-# 🛒 Foie Gras E-commerce Platform (Backend & Admin)
+# 🛒 foiegras-company E-commerce Platform (Backend & Admin)
 
 A robust, API-driven e-commerce solution built with **Laravel 10**, featuring an advanced administration panel, complex product logic, and seamless payment integrations.
 
