@@ -11,7 +11,7 @@ use Filament\Widgets\StatsOverviewWidget\Stat;
 class AdminWidget extends BaseWidget
 {
     protected static bool $isDiscovered = false;
-    
+
     protected function getStats(): array
     {
         return [
@@ -33,7 +33,8 @@ class AdminWidget extends BaseWidget
                 ->color('primary')
                 ->chart([1,3,5,15,20,30,50,80,100]),
 
-            Stat::make('Total Revenue', Order::sum('total') . ' EGP')
+            Stat::make('Total Revenue', Order::where('order_status', 'delivered')
+                ->sum('total') . ' EGP')
                 ->description('All sales revenue')
                 ->icon('heroicon-o-banknotes')
                 ->color('danger')

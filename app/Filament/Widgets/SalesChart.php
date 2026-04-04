@@ -22,6 +22,7 @@ class SalesChart extends ChartWidget
             $date = Carbon::today()->subDays($i);
 
             $data[] = Order::whereDate('created_at', $date)
+                ->where('order_status', 'delivered')
                 ->sum('total');
         }
 

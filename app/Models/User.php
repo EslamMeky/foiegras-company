@@ -38,6 +38,8 @@ class User extends Authenticatable implements JWTSubject, FilamentUser
         'role',
         'address',
         'image',
+        'otp_code',
+        'otp_expires_at',
         'created_at',
         'updated_at'
     ];
@@ -68,6 +70,8 @@ class User extends Authenticatable implements JWTSubject, FilamentUser
             ->title('Saved successfully')
             ->getDatabaseMessage();
     }
+
+
 
     public function getImageAttribute($val)
     {

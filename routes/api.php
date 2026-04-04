@@ -35,7 +35,13 @@ Route::group(['middleware'=>['check.lang']],function (){
         Route::post('forget-Password', [AuthController::class, 'resetPassword']);
         Route::post('updateProfile', [AuthController::class, 'updateProfile'])->middleware('auth:api');
         Route::get('me', [AuthController::class, 'singleUser'])->middleware('auth:api');
-
+        // Route::post('refresh', [AuthController::class, 'refresh'])->middleware('auth:api');
+        Route::post('myorders', [AuthController::class, 'myorder'])->middleware('auth:api');
+        Route::post('myfavourite', [AuthController::class, 'myfavourite'])->middleware('auth:api');
+        Route::post('password/send-otp', [AuthController::class, 'sendOtp'])->middleware('auth:api');
+        Route::post('password/verify-otp', [AuthController::class, 'verifyOtp'])->middleware('auth:api');
+        Route::post('password/reset', [AuthController::class, 'resetPassword2'])->middleware('auth:api');
+        Route::post('delete-account', [AuthController::class, 'deleteAccount'])->middleware('auth:api');
     });
 
     Route::group(['prefix'=>'v1/category'],function (){

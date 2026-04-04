@@ -50,7 +50,7 @@ class CustomerReviewController extends Controller
         {
             // $user=auth()->user()->id();
             // جلب التقييمات مع المستخدمين
-            $reviews = CustomerReview::with(['users'])
+            $reviews = CustomerReview::with(['user'])
                 ->paginate(10);
 
             return $this->ReturnData('reviews', $reviews, '');
